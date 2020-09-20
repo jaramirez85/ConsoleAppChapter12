@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Linq;
 
 namespace ConsoleAppChapter12
 {
@@ -6,18 +7,17 @@ namespace ConsoleAppChapter12
     {
         static void Main(string[] args)
         {
-            var tuple = (10, "text");
-            
-            (int c, string d) = tuple;
 
-            (int c, string d) x = tuple;
+            (int a, int b, string name) = MethodReturningTuple();
+            //(int a, int b, var name) = MethodReturningTuple();   --implicit, explicit
+            //(long a, int b, XNamespace name) = MethodReturningTuple(); --with convertions
+            //var (a, b, name) = MethodReturningTuple();  --shorthand c#7
 
-            Console.WriteLine($"c: { c }");
-            Console.WriteLine($"d: { d }");
-            Console.WriteLine($"x.c: { x.c }");
-            Console.WriteLine($"x.d: { x.d }");
+            Console.WriteLine($"a: {a}; b: {b}; name: {name}");
 
             Console.ReadLine();
         }
+
+        static (int x, int y, string text) MethodReturningTuple() => (1, 2, "t");
     }
 }

@@ -7,16 +7,16 @@ namespace ConsoleAppChapter12
         static void Main(string[] args)
         {
             var tuple = (10, "text");
-            var (a, b) = tuple;
+            
             (int c, string d) = tuple;
 
-            int e;
-            string f;
-            (e, f) = tuple;
+            (int c, string d) x = tuple;
 
-            Console.WriteLine($"a: {a}; b: {b}");
-            Console.WriteLine($"c: {c}; d: {d}");
-            Console.WriteLine($"e: {e}; f: {f}");
+            Console.WriteLine($"c: { c }");
+            Console.WriteLine($"d: { d }");
+            Console.WriteLine($"x.c: { x.c }");
+            Console.WriteLine($"x.d: { x.d }");
+
             Console.ReadLine();
         }
     }

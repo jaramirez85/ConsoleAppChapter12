@@ -8,10 +8,10 @@ namespace ConsoleAppChapter12
         static void Main(string[] args)
         {
 
-            //var _ = "Xavi";
-            var tuple = (1, 2, 3, 4);
-            var (x, y, _, _) = tuple;
-            Console.WriteLine(_);
+            var tuple = (10, "text");
+            int e;
+            string f;
+            (e, f) = tuple;
 
             Console.ReadLine();
         }
